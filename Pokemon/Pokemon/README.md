@@ -39,9 +39,3 @@ Professor Oak is in trouble! A wild Blastoise wreaked havoc in the server room a
 -   Testing: is the system adequately tested? How was testing performed?
 
 ### CodeSubmit
-
-Please organize, design, test and document your code as if it were going into production - then zip and send back to CobbleStone Software.
-
-All the best and happy coding,
-
-The CobbleStone Software Team
