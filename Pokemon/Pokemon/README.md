@@ -28,14 +28,3 @@ Professor Oak is in trouble! A wild Blastoise wreaked havoc in the server room a
             -   e.g. `/pokemon?hp[gte]=100&defense[lte]=200`
         -   Pagination: e.g. `/pokemon?page=1`
 
-### Evaluation Criteria
-
--   **C#** best practices
--   Show us your work through your comments
--   We're looking for you to produce working code, with enough room to demonstrate how to structure components in a small program
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
--   Testing: is the system adequately tested? How was testing performed?
-
-### CodeSubmit
