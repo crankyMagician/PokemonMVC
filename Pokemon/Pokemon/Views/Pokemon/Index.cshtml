@@ -1,0 +1,96 @@
+﻿
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+@model PaginatedList<PokemonModel>
+<div class="row">
+  <div class="col-sm-6">
+    <form asp-action="Index" method="get">
+      <div class="form-actions no-color">
+        <p>
+                    <label for="nameSearch">Name Search:</label> <input type="text" name="SearchString" value="@ViewData["SearchFilter"]" />
+                    <input type="submit" value="Search" class="btn btn-primary " /> |
+                    <a asp-action="Index" class="btn btn-primary">Reset Search</a>
+        </p>
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-6">
+   <form asp-action="Search" method="get">
+  <div class="row">
+    <div class="col-4">
+      <label for="hp" >HP:</label>
+      <input type="text" name="hp" id="hp" class="form-control" />
+    </div>
+    <div class="col-4">
+      <label for="attack">Attack:</label>
+      <input type="text" name="attack" id="attack" class="form-control" />
+    </div>
+    <div class="col-4">
+      <label for="defense">Defense:</label>
+      <input type="text" name="defense" id="defense" class="form-control" />
+    </div>
+  </div>
+   <div class="text-center my-3">
+  <input type="submit" value="Search by Stats" class="btn btn-primary form-control" />
+  </div>
+</form>
+
+  </div>
+</div>
+
+
+<table class="table table-bordered  table-hover">
+        <tr>
+            <th>Name</th>
+            <th>TypeOne</th>
+            <th>TypeTwo</th>
+            <th>@Html.ActionLink("HP", "Index", new { sortOrder = ViewBag.HPSortParm })</th>
+
+            <th><a asp-action="Index" asp-route-sortOrder="@ViewData["AttackSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Attack</a></th>
+            <th>@Html.ActionLink("Defense", "Index", new { sortOrder = ViewBag.DefenseSortParm })</th>
+            <th>Special Attack</th>
+            <th>Special Defense</th>
+            <th>Speed</th>
+            <th>Generation</th>
+            <th>Total</th>
+        </tr>
+        @foreach (var pokemon in Model)
+    {
+        <tr>
+            <td>@pokemon.PName</td>
+            <td>@pokemon.TypeOne</td>
+            <td>@pokemon.TypeTwo</td>
+            <td>@pokemon.HP</td>
+            <td>@pokemon.Attack</td>
+            <td>@pokemon.Defense</td>
+            <td>@pokemon.SpAttack</td>
+            <td>@pokemon.SpDefense</td>
+            <td>@pokemon.Speed</td>
+            <td>@pokemon.Gen</td>
+            <td>@pokemon.Total</td>
+        </tr>
+    }
+   
+
+    </table>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

@@ -1,0 +1,35 @@
+﻿@model List<PokemonModel>
+<a asp-action="Index">Return to Full List</a>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>TypeOne</th>
+        <th>TypeTwo</th>
+        <th>HP</th>
+        <th>Attack</th>
+        <th>Defense</th>
+        <th>Special Attack</th>
+        <th>Special Defense</th>
+        <th>Speed</th>
+        <th>Generation</th>
+        <th>Total</th>
+    </tr>
+    @foreach (var pokemon in Model)
+    {
+        <tr>
+            <td>@pokemon.PName</td>
+            <td>@pokemon.TypeOne</td>
+            <td>@pokemon.TypeTwo</td>
+            <td>@pokemon.HP</td>
+            <td>@pokemon.Attack</td>
+            <td>@pokemon.Defense</td>
+            <td>@pokemon.SpAttack</td>
+            <td>@pokemon.SpDefense</td>
+            <td>@pokemon.Speed</td>
+            <td>@pokemon.Gen</td>
+            <td>@pokemon.Total</td>
+        </tr>
+    }
+
+
+</table>

@@ -1,0 +1,44 @@
+﻿
+@font-face {
+    font-family: 'PokemonSolid';
+    src: url('/fonts/pokemon/PokemonSolid.ttf');
+}
+@font-face {
+    font-family: 'PokemonHollow';
+    src: url('/fonts/pokemon/PokemonHollow.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto-Reg';
+    src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+   
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+body {
+    font-family: 'Roboto-Bold';
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    text-align: center;
+}
+
+th {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    font-family: 'PokemonSolid';
+    color: black;
+    letter-spacing: 0.15em;
+}
+td {
+    font-family: 'Roboto-Bold';
+    color: black;
+   
+}
+
